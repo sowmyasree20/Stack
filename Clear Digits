@@ -1,0 +1,19 @@
+class Solution {
+    public String clearDigits(String s) {
+       Stack<Character> k=new Stack<>();
+       StringBuilder sb=new StringBuilder();
+       for(int i=0;i<s.length();i++){
+          char ch=s.charAt(i);
+          if(ch>='0' && ch<='9'){
+            k.pop();
+          }else{
+            k.push(ch);
+          }
+       }
+          while(!k.isEmpty()){
+            sb.append(k.pop());
+          }
+          sb.reverse();
+       return sb.toString();
+}
+}
